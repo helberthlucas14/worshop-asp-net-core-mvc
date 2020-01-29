@@ -21,5 +21,10 @@ namespace SalesWebMvc.Services
         {
             return await _context.Department.OrderBy(x => x.Name).ToListAsync();
         }
+
+        public async Task<int> DeparmentCountAsync()
+        {
+            return await _context.Department.CountAsync(); ;
+        }
     }
 }

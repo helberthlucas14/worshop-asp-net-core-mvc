@@ -68,5 +68,10 @@ namespace SalesWebMvc.Services
             }
 
         }
+
+        public async Task<int> SellerCountAsync()
+        {
+            return await _context.Seller.CountAsync(); ;
+        }
     }
 }

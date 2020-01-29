@@ -55,5 +55,10 @@ namespace SalesWebMvc.Services
                          .GroupBy(x => x.Seller.Department)
                          .ToListAsync();
         }
+
+        public async Task<int> SalesRecodsCountAsync()
+        {
+            return await _context.SalesRecord.CountAsync(); ;
+        }
     }
 }
