@@ -1,50 +1,71 @@
 ﻿@model SalesWebMvc.Models.Seller
+
 @{
     ViewData["Title"] = "Details";
+    ViewData["Page"] = "Sellers";
 }
 
-<h2>@ViewData["Title"]</h2>
-<div>
-    <h4>Seller</h4>
-    <hr />
-    <div class="card-body">
-        <div class="card-text">
-            <dl class="row">
-                <dt class="col-4">
-                    @Html.DisplayNameFor(model => model.Name)
-                </dt>
-                <dd class="col-8">
-                    @Html.DisplayFor(model => model.Name)
-                </dd>
-                <dt class="col-4">
-                    @Html.DisplayNameFor(model => model.Email)
-                </dt>
-                <dd class="col-8">
-                    @Html.DisplayFor(model => model.Email)
-                </dd>
-                <dt class="col-4">
-                    @Html.DisplayNameFor(model => model.BirthDate)
-                </dt>
-                <dd class="col-8">
-                    @Html.DisplayFor(model => model.BirthDate)
-                </dd>
-                <dt class="col-4">
-                    @Html.DisplayNameFor(model => model.BaseSalary)
-                </dt>
-                <dd class="col-8">
-                    @Html.DisplayFor(model => model.BaseSalary)
-                </dd>
-                <dt class="col-4">
-                    @Html.DisplayNameFor(model => model.Department)
-                </dt>
-                <dd class="col-8">
-                    @Html.DisplayFor(model => model.Department.Name)
-                </dd>
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    @*<h1 class="m-0 text-dark">Dashboard</h1>*@
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a asp-area="" asp-controller="Sellers" asp-action="Index">@ViewData["Page"]</a></li>
+                        <li class="breadcrumb-item active">@ViewData["Title"]</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
 
-            </dl>
+    <section class="content">
+        <div class="container-fluid">
+            <hr />
+            <div class="card-body">
+                <div class="card-text">
+                    <dl class="row">
+                        <dt class="col-4">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+                        <dd class="col-8">
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+                        <dt class="col-4">
+                            @Html.DisplayNameFor(model => model.Email)
+                        </dt>
+                        <dd class="col-8">
+                            @Html.DisplayFor(model => model.Email)
+                        </dd>
+                        <dt class="col-4">
+                            @Html.DisplayNameFor(model => model.BirthDate)
+                        </dt>
+                        <dd class="col-8">
+                            @Html.DisplayFor(model => model.BirthDate)
+                        </dd>
+                        <dt class="col-4">
+                            @Html.DisplayNameFor(model => model.BaseSalary)
+                        </dt>
+                        <dd class="col-8">
+                            @Html.DisplayFor(model => model.BaseSalary)
+                        </dd>
+                        <dt class="col-4">
+                            @Html.DisplayNameFor(model => model.Department)
+                        </dt>
+                        <dd class="col-8">
+                            @Html.DisplayFor(model => model.Department.Name)
+                        </dd>
+
+                    </dl>
+                </div>
+            </div>
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-dark">Edit</a>
+                <a asp-action="Index">Back to list</a>
+            </div>
         </div>
-    </div>
-    <div>
-        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-dark">Edit</a>
-        <a asp-action="Index">Back to list</a>
-    </div>
+    </section>
+</div>
