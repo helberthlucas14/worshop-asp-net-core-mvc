@@ -32,8 +32,8 @@ namespace SalesWebMvc
             services.AddControllersWithViews();
 
             services.AddDbContext<SalesWebMvcContext>(options =>
-                    options.UseMySql(Configuration.GetConnectionString("SalesWebMvcContext"), builder =>
-                    builder.MigrationsAssembly("SalesWebMvc")));
+                    options.UseMySql(Configuration.GetConnectionString("SalesWebMvcContext"),
+                    builder => builder.MigrationsAssembly("SalesWebMvc")));
 
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
